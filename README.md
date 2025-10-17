@@ -43,3 +43,19 @@ docker run -p -d 3000:3000 express
 [Open Localhost](http://localhost:3000/)
 
 or go to ## http://localhost:3000/
+
+
+## mongodb on network 
+
+# make a network 
+```bash
+docker network create myNetwork 
+```
+# run mongo on the network with name (mongodb)
+```bash
+docker run -d --name mongodb --network myNetwork mongo
+```
+# run server on the same network 
+```bash 
+docker run --network myNetwork -p 3000:3000 express
+```
