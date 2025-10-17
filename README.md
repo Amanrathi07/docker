@@ -5,21 +5,7 @@ A simple Express.js server running inside a Docker container, written in TypeScr
 
 ---
 
-## Table of Contents
 
-- [Features](#features)  
-- [Prerequisites](#prerequisites)  
-- [Getting Started](#getting-started)  
-  - [Clone the Repository](#clone-the-repository)  
-  - [Build Docker Image](#build-docker-image)  
-  - [Run Docker Container](#run-docker-container)  
-- [Project Structure](#project-structure)  
-- [NPM Scripts](#npm-scripts)  
-- [Environment Variables](#environment-variables)  
-- [Notes](#notes)  
-- [License](#license)
-
----
 
 ## Features
 
@@ -32,7 +18,7 @@ A simple Express.js server running inside a Docker container, written in TypeScr
 ## Prerequisites
 
 - [Docker](https://www.docker.com/get-started) installed  
-- Basic knowledge of Docker commands  
+ 
 
 ---
 
@@ -43,3 +29,17 @@ A simple Express.js server running inside a Docker container, written in TypeScr
 ```bash
 git clone https://github.com/Amanrathi07/docker.git
 cd docker
+
+```
+### Make docker image 
+```bash
+docker build -t express .
+```
+### Run the container with port mapping (3000)
+```bash
+docker run -p -d 3000:3000 express
+```
+##
+[Open Localhost](http://localhost:3000/)
+
+or go to ## http://localhost:3000/
