@@ -59,3 +59,15 @@ docker run -d --name mongodb --network myNetwork mongo
 ```bash 
 docker run --network myNetwork -p 3000:3000 express
 ```
+
+
+### just fetch from docker hub
+
+```bash
+docker run --network myNetwork -p 3000:3000 amanrathi07/express-server:latest
+```
+
+# run mongo on the network with name (mongodb)
+```bash
+docker run -d --name mongodb --network myNetwork mongo
+```
