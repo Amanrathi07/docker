@@ -71,3 +71,10 @@ docker run --network myNetwork -p 3000:3000 amanrathi07/express-server:latest
 ```bash
 docker run -d --name mongodb --network myNetwork mongo
 ```
+
+
+
+### run all container and volume  
+```bash
+docker compose up
+```
