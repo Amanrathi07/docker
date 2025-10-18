@@ -1,21 +1,25 @@
-version:'3.8'
+version: '3.8'
+
 services:
   mongodb:
-    image:"mongo"
-    container_name:mongodb
+    image: mongo
+    container_name: mongodb
     ports:
       - 27017:27017
     volumes:
-      - myVolumes:/data/db
+      - myVolume:/data/db
+    restart: always
+
   backend:
-    image:"express-server"
-    container_name:backend_app
+    image: express-server
+    container_name: backend_app
     depends_on:
       - mongodb
     ports:
       - 3000:3000
     environment:
-      - MONGO_URL:mongodb://mongodb:27017/aman        
+      MONGO_URL: mongodb://mongodb:27017/aman
+
 
 volumes:
-  myVolume    
+  myVolume:
