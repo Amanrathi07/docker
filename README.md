@@ -1,80 +1,91 @@
 
-# Dockerized Express Server
+---
 
-A simple Express.js server running inside a Docker container, written in TypeScript. This setup allows you to quickly build and run the server using Docker without installing Node.js or dependencies locally.
+# 🚀 Dockerized Express Server (TypeScript)
+
+A lightweight **Express.js server** built with **TypeScript** and fully **Dockerized** for seamless setup and deployment.
+Run it anywhere — no need to install Node.js or dependencies locally.
 
 ---
 
+## ✨ Features
 
-
-## Features
-
-- TypeScript-based Express.js server  
-- Fully Dockerized for easy deployment  
-- Simple build and run commands  
+* ⚙️ **TypeScript** for cleaner and safer code
+* 🐳 **Dockerized** — isolate dependencies, run anywhere
+* ⚡ **Simple commands** to build, run, and connect to MongoDB
 
 ---
 
-## Prerequisites
+## 🧩 Prerequisites
 
-- [Docker](https://www.docker.com/get-started) installed  
- 
+Make sure you have [Docker](https://www.docker.com/get-started) installed on your system.
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
-### Clone the Repository
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/Amanrathi07/docker.git
 cd docker
-
 ```
-### Make docker image 
+
+### 2️⃣ Build the Docker Image
+
 ```bash
 docker build -t express .
 ```
-### Run the container with port mapping (3000)
+
+### 3️⃣ Run the Container (Port 3000)
+
 ```bash
-docker run -p -d 3000:3000 express
+docker run -d -p 3000:3000 express
 ```
-##
-[Open Localhost](http://localhost:3000/)
 
-or go to ## http://localhost:3000/
+### 🌐 Access the Server
 
+Open in your browser → [http://localhost:3000/](http://localhost:3000/)
 
-## mongodb on network 
+---
 
-# make a network 
+## 🗄️ Connect with MongoDB (Using Docker Network)
+
+### 1️⃣ Create a Network
+
 ```bash
-docker network create myNetwork 
+docker network create myNetwork
 ```
-# run mongo on the network with name (mongodb)
+
+### 2️⃣ Run MongoDB on the Network
+
 ```bash
 docker run -d --name mongodb --network myNetwork mongo
 ```
-# run server on the same network 
-```bash 
+
+### 3️⃣ Run Express Server on the Same Network
+
+```bash
 docker run --network myNetwork -p 3000:3000 express
 ```
 
+---
 
-### just fetch from docker hub
+## 🐙 Pull from Docker Hub (Optional)
+
+You can skip building locally and directly pull the image:
 
 ```bash
 docker run --network myNetwork -p 3000:3000 amanrathi07/express-server:latest
 ```
 
-# run mongo on the network with name (mongodb)
-```bash
-docker run -d --name mongodb --network myNetwork mongo
-```
+---
 
+## 🧱 Run All Containers with Docker Compose
 
-
-### run all container and volume  
 ```bash
 docker compose up
 ```
+
+---
+
